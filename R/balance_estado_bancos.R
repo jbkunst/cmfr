@@ -76,10 +76,10 @@ cmb_besb_importar <- function(archivo){
   )
 
   data <- data |>
-    mutate(across(where(is.character), readr::parse_number))
+    dplyr::mutate(across(where(is.character), readr::parse_number))
 
-  data <- bind_cols(meta_data, data) |>
-    mutate(
+  data <- dplyr::bind_cols(meta_data, data) |>
+    dplyr::mutate(
       modelo = modelo,
       periodo = periodo,
       .before = 1

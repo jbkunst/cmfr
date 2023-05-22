@@ -26,18 +26,18 @@ dlinks |>
 
   })
 
-data <- dir("data-raw/balance", full.names = TRUE) |>
+balance <- dir("data-raw/balance", full.names = TRUE) |>
   map(readRDS)
 
-data |> map(count) |>  bind_rows()
+balance |> map(count) |>  bind_rows()
 
-data |> map(count, periodo) |>  bind_rows()
+balance |> map(count, periodo) |>  bind_rows()
 
-data <- bind_rows(data)
+balance <- bind_rows(balance)
 
-data |>
+balance |>
   filter(modelo == "b1", cod_ifi == "001", X1 == 100000000)
 
-balance <- data
+balance |> count(ifi, sort = TRUE)
 
 usethis::use_data(balance)

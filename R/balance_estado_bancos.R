@@ -83,6 +83,9 @@ cmb_besb_importar <- function(archivo){
       modelo = modelo,
       periodo = periodo,
       .before = 1
+    ) |>
+    dplyr::mutate(
+      ifi = iconv(ifi, "latin1", "UTF-8")
     )
 
   data
@@ -99,7 +102,7 @@ cmf_besb_data <- function(url_file){
   tmp_file <- tempfile(fileext = ".zip")
   tmp_dir  <- dirname(tmp_file)
 
-  download.file(url_file, tmp_file)
+  utils::download.file(url_file, tmp_file)
 
   dfiles <- unzip(tmp_file, list = TRUE, overwrite = TRUE)
 
@@ -111,7 +114,7 @@ cmf_besb_data <- function(url_file){
 
   stopifnot(length(periodo) == 1)
 
-  unzip(tmp_file, exdir = dirname(tmp_file), overwrite = TRUE)
+  utils::unzip(tmp_file, exdir = dirname(tmp_file), overwrite = TRUE)
 
   files <- fs::dir_ls(file.path(tmp_dir), recurse = TRUE)
 

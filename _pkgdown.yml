@@ -1,0 +1,8 @@
+url: ~
+template:
+  bootstrap: 5
+  bslib:
+    primary: "#57199a"
+    headings-color:  "#333333"
+navbar:
+  bg: primary

@@ -33,6 +33,11 @@ data |> map(count) |>  bind_rows()
 
 data |> map(count, periodo) |>  bind_rows()
 
+data <- bind_rows(data)
+
 data |>
-  bind_rows() |>
   filter(modelo == "b1", cod_ifi == "001", X1 == 100000000)
+
+balance <- data
+
+usethis::use_data(balance)

@@ -40,3 +40,4 @@ vignettes/*.pdf
 .Rproj.user
 docs
 data-raw/balance/*.rds
+data-raw/balance-parallel/*.rds

@@ -19,7 +19,8 @@ Imports:
     rvest,
     stringr,
     tibble,
-    tidyr
+    tidyr,
+    utils
 Depends: 
     R (>= 4.1)
 LazyData: true

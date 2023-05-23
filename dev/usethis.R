@@ -8,6 +8,7 @@ usethis::use_package("stringr")
 usethis::use_package("lubridate")
 usethis::use_package("tidyr")
 usethis::use_package("fs")
+usethis::use_package("utils")
 
 usethis::use_mit_license()
 

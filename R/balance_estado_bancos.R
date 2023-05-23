@@ -49,7 +49,7 @@ cmf_besb_links <- function(){
 #' @export
 cmb_besb_importar <- function(archivo){
 
-  # archivo <- "C:/Users/jbkun/AppData/Local/Temp/RtmpucdLZi/202301/b1202301001.txt"
+  # archivo <- "C:/Users/jbkun/AppData/Local/Temp/RtmpQdCacf/201408_011014/r1201408016.txt"
 
   modelo <- archivo |>
     basename() |>
@@ -78,7 +78,9 @@ cmb_besb_importar <- function(archivo){
   data <- data |>
     dplyr::mutate(across(where(is.character), readr::parse_number))
 
-  data <- dplyr::bind_cols(meta_data, data) |>
+  data <- dplyr::bind_cols(meta_data, data)
+
+  data <- data |>
     dplyr::mutate(
       modelo = modelo,
       periodo = periodo,

@@ -24,5 +24,6 @@ usethis::use_pkgdown_github_pages()
 
 # test pkgdown ------------------------------------------------------------
 pkgdown::init_site()
+pkgdown::build_site()
 pkgdown::build_home(preview = TRUE)
 

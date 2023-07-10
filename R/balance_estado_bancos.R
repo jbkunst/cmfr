@@ -46,10 +46,12 @@ cmf_besb_links <- function(){
 
 }
 
+#' Importar archivo estado resultado
+#' @param archivo archivo a importar.
 #' @export
-cmb_besb_importar <- function(archivo){
+cmf_besb_importar <- function(archivo){
 
-  # archivo <- "C:/Users/jbkun/AppData/Local/Temp/RtmpQdCacf/201408_011014/r1201408016.txt"
+  # archivo <- "C:/Users/jbkun/AppData/Local/Temp/RtmpcThb0F/201408_011014/b1201408028.txt"
 
   modelo <- archivo |>
     basename() |>
@@ -94,6 +96,13 @@ cmb_besb_importar <- function(archivo){
 
 }
 
+
+#' Importar archivo estado resultado
+#' @param url_file url a descargar y leer.
+#' @examples
+#'
+#' cmf_besb_data("https://www.cmfchile.cl/portal/estadisticas/617/articles-43001_recurso_1.zip")
+#'
 #' @export
 cmf_besb_data <- function(url_file){
 
@@ -124,10 +133,33 @@ cmf_besb_data <- function(url_file){
     stringr::str_subset(stringr::str_c("/(b1|b2|c1|c2|r1)", periodo)) |>
     stringr::str_subset("txt$")
 
-  data <- purrr::map(files, cmb_besb_importar)
+  data <- purrr::map(files, cmf_besb_importar)
 
   data <- dplyr::bind_rows(data)
 
   data
 
 }
+
+cmf_besb_modelo <- function(data, m = "b1"){
+
+  dout <- dplyr::filter(data, modelo == m)
+
+  # if(m = "b1"){
+  #   dout <- dout |>
+  #     select(
+  #       mode_nacional = X1,
+  #       mode_nacional = X1,
+  #       )
+  # } else if (m == "b2"){
+  #   dout <- dout |>
+  #     select(
+  #       mode_nacional = X1,
+  #       mode_nacional = X1,
+  #     )
+  # }
+
+  dout
+
+}
+

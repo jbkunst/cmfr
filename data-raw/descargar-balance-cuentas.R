@@ -65,20 +65,38 @@ instituciones_financieras <- instituciones_financieras |>
       ifi == "SCOTIABANK CHILE"               ~ "#ec111a",
       ifi == "BANCO BICE"                     ~ "#1976d2",
       ifi == "BANCO ITAÚ CHILE"               ~ "#1a5493",
-
       ifi == "BANCO FALABELLA"                ~ "#43b02a",
       ifi == "BANCO RIPLEY"                   ~ "#523178",
       ifi == "BANCO CONSORCIO"                ~ "#003da5",
       ifi == "BANCO SECURITY"                 ~ "#6a2f92",
       ifi == "BANCO INTERNACIONAL"            ~ "#001a72",
+      ifi == "SMU CORP S.A."                  ~ "#d70f18",
+
+      ifi == "BANCO BILBAO VIZCAYA ARGENTARIA CHILE" ~ "#072146",
 
       ifi == "" ~ "#",
       ifi == "" ~ "#",
       ifi == "" ~ "#",
       ifi == "" ~ "#",
       ifi == "" ~ "#",
-
       TRUE                                    ~ NA
+    ),
+    abreviacion = case_when(
+      ifi == "BANCO SANTANDER-CHILE"          ~ "SAN",
+      ifi == "BANCO DEL ESTADO DE CHILE"      ~ "EST",
+      ifi == "BANCO DE CHILE"                 ~ "CHI",
+      ifi == "BANCO DE CRÉDITO E INVERSIONES" ~ "BCI",
+      ifi == "SCOTIABANK CHILE"               ~ "SCO",
+      ifi == "BANCO BICE"                     ~ "BICE",
+      ifi == "BANCO ITAÚ CHILE"               ~ "ITAU",
+      ifi == "BANCO FALABELLA"                ~ "FBLA",
+      ifi == "BANCO RIPLEY"                   ~ "RIP",
+      ifi == "BANCO CONSORCIO"                ~ "CNSCIO",
+      ifi == "BANCO SECURITY"                 ~ "SCTY",
+      ifi == "BANCO INTERNACIONAL"            ~ "INT",
+      ifi == "SMU CORP S.A."                  ~ "SMU",
+      ifi == "BANCO BILBAO VIZCAYA ARGENTARIA CHILE" ~ "BBVA",
+      TRUE                                    ~ cod_ifi
     )
   )
 

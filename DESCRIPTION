@@ -7,16 +7,12 @@ Description: Paquete para descubrir, describir y descargar series estadísticas 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/jbkunst/cmfr
+URL: https://jkunst.com/cmfr/, https://github.com/jbkunst/cmfr
 BugReports: https://github.com/jbkunst/cmfr/issues
 Imports:
     httr,
     jsonlite,
     rlang,
     tibble
-Suggests:
-    knitr,
-    rmarkdown
 Depends:
     R (>= 4.1.0)
-VignetteBuilder: knitr

@@ -1,26 +1,22 @@
 Package: cmfr
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.1
+Title: API para Datos Estadísticos de la Comisión para el Mercado Financiero de Chile
+Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Joshua", "Kunst", email = "jbkunst@gmail.com", role = c("aut", "cre"))
+Description: Paquete para descubrir, describir y descargar series estadísticas públicas de la Comisión para el Mercado Financiero de Chile.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
-Imports: 
-    dplyr,
-    fs,
-    lubridate,
-    purrr,
-    readr,
+URL: https://github.com/jbkunst/cmfr
+BugReports: https://github.com/jbkunst/cmfr/issues
+Imports:
+    httr,
+    jsonlite,
     rlang,
-    rvest,
-    stringr,
-    tibble,
-    tidyr,
-    utils
-Depends: 
-    R (>= 4.1)
-LazyData: true
+    tibble
+Suggests:
+    knitr,
+    rmarkdown
+Depends:
+    R (>= 4.1.0)
+VignetteBuilder: knitr

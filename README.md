@@ -4,31 +4,39 @@
 [![R-CMD-check](https://github.com/jbkunst/cmfr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jbkunst/cmfr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-`cmfr` será un cliente R pequeño para descubrir, describir y descargar series estadísticas públicas de la Comisión para el Mercado Financiero de Chile (CMF), con foco inicial en BEST+.
+Repositorio de desarrollo de `cmfr`, un cliente R pequeño para datos estadísticos públicos de la Comisión para el Mercado Financiero de Chile (CMF), con foco inicial en BEST+.
 
-El paquete está en desarrollo. La interfaz pública se definirá a partir del contrato real de la API oficial de BEST+, sin mantener compatibilidad con el experimento previo de este repositorio.
+## Estado
 
-## Instalación
+El paquete está en desarrollo temprano. El trabajo actual es entender y validar el contrato real de la API oficial de BEST+ antes de fijar la interfaz pública.
+
+Primer caso de validación:
+
+> colocaciones de consumo por banco
+
+No se mantiene compatibilidad con el experimento anterior de este repositorio.
+
+## Desarrollo
+
+La intención es mantener el paquete deliberadamente pequeño:
+
+- un core mínimo en `R/interface.R`;
+- API pública en `snake_case`;
+- `tibble`s como salida principal;
+- identificadores explícitos para descargar datos;
+- sin clases complejas, caché, bases locales, gráficos ni modelamiento en el core;
+- sin lógica específica para LLMs, `ellmer` o MCP.
+
+Instalación de la versión de desarrollo:
 
 ```r
 # install.packages("devtools")
 devtools::install_github("jbkunst/cmfr")
 ```
 
-## Principios
+## Fuentes oficiales
 
-- API pequeña y consistente en `snake_case`.
-- Identificadores explícitos para descargar datos.
-- Lenguaje humano solo en funciones `resolve_*()`.
-- `tibble`s como salida principal.
-- Sin clases complejas, caché, bases locales, gráficos ni modelamiento en el core.
-- El paquete no conoce ni depende de LLMs, `ellmer` o MCP.
+- BEST+: <https://best.cmfchile.cl/inicio>
+- API BEST+: <https://best.cmfchile.cl/api/acerca>
 
-## BEST+
-
-La fuente principal en evaluación es BEST+:
-
-- <https://best.cmfchile.cl/inicio>
-- <https://best.cmfchile.cl/api/acerca>
-
-El primer caso de validación será obtener colocaciones de consumo por banco y entender cómo BEST+ representa series, instituciones, dimensiones y períodos.
+La portada de pkgdown vive separadamente en `pkgdown/index.md` para que la documentación del sitio pueda evolucionar sin convertir este README en la página principal del paquete.

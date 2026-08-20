@@ -1,5 +1,6 @@
 ^cmfr\.Rproj$
 ^\.Rproj\.user$
+^AGENTS\.md$
 ^LICENSE\.md$
 ^\.github$
 ^_pkgdown\.yml$

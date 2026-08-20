@@ -1,0 +1,13 @@
+url: https://jkunst.com/cmfr/
+
+authors:
+  Joshua Kunst:
+    href: https://jkunst.com
+
+lang: es
+
+template:
+  bootstrap: 5
+
+navbar:
+  type: dark

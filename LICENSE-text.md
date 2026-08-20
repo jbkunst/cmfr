@@ -1,0 +1,4 @@
+# Licencia
+
+    YEAR: 2026
+    COPYRIGHT HOLDER: Joshua Kunst
